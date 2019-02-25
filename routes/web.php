@@ -12,10 +12,21 @@
 */
 
 Route::get('/', 'TeamsController@index');
-Route::get('/teams','TeamsController@index')->name('teams');
-Route::get('/teams/{id}','TeamsController@show')->name('team');
 
-Route::get('/players','PlayersController@index')->name('players');
-Route::get('/players/{id}','PlayersController@show')->name('player');
+Route::group(['middleware'=>['auth']],function(){
+    Route::get('/teams','TeamsController@index')->name('teams');
+    Route::get('/teams/{id}','TeamsController@show')->name('team');
+    Route::get('/players','PlayersController@index')->name('players');
+    Route::get('/players/{id}','PlayersController@show')->name('player');
+    Route::get('/logout', 'LoginController@logout')->name('logout');
+
+    
+});
 
 
+Route::group(['middleware'=>['guest']],function(){
+    Route::get('/register','RegisterController@create')->name('show-register');
+    Route::post('/register','RegisterController@store')->name('register');
+    Route::get('/login','LoginController@create')->name('show-login');
+    Route::post('/login','LoginController@store')->name('login');
+});

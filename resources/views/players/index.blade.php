@@ -1,4 +1,4 @@
-@extends('partials.master')
+@extends('layouts.master')
 
 @section('title','players')
 
