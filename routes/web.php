@@ -20,6 +20,8 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/players/{id}','PlayersController@show')->name('player');
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
+    Route::post('/teams/{id}/comments','CommentsController@store')->name('comments');
+
     
 });
 

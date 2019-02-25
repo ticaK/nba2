@@ -19,7 +19,7 @@ class RegisterController extends Controller
         $data = $request->only(['email','name','password']);
         $data['password'] = bcrypt($data['password']);
         $user = User::create($data);
-        return redirect('/teams');
+        return redirect('/login');
 
     }
 
