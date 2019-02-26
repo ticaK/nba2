@@ -14,7 +14,7 @@ class AlterTableUsersAddIsVerifiedColumn extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->boolean('is_verified')->default(true);
+            $table->boolean('is_verified')->default(false);
         });
     }
 
