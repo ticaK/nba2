@@ -6,6 +6,9 @@
         <a class="nav-link" href="/teams">Teams</a>
       </li>
       <li class="nav-item">
+          <a class="nav-link" href="/news">News</a>
+        </li>
+      <li class="nav-item">
         <a class="nav-link" href="/create">Create</a>
       </li>
       

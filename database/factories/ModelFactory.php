@@ -41,3 +41,14 @@ $factory->define(App\User::class, function (Faker $faker) {
         
         ];
     });
+
+
+    $factory->define(App\News::class, function(Faker $faker){
+        return[
+        'title'=>$faker->realText(150),
+        'content'=>implode(' ',$faker->sentences(15))
+        ];
+    });
+
+
+    
