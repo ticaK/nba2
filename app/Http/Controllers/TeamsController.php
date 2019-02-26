@@ -51,12 +51,12 @@ class TeamsController extends Controller
         return view('teams.show',compact('team'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function showTeamNews(Team $team){
+        $news = $team->news()->paginate(5);
+        return view('news.index',compact('news'));
+
+    }
+    
     public function edit($id)
     {
         //

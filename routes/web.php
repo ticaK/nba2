@@ -24,8 +24,12 @@ Route::group(['middleware'=>['auth']],function(){
     ->name('comments')
     ->middleware('content');
 
-    Route::get('/news','NewsController@index')->name('News');
+    Route::get('/news/team/{team}','TeamsController@showTeamNews')->name('team-news');
+    Route::get('/news/create','NewsController@create')->name('create-form');
+    Route::post('/news/create','NewsController@store')->name('create');
     Route::get('/news/{id}','NewsController@show')->name('single-news');
+     Route::get('/news','NewsController@index')->name('News');
+
 
 
     

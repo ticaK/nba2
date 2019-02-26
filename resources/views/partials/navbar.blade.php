@@ -9,7 +9,7 @@
           <a class="nav-link" href="/news">News</a>
         </li>
       <li class="nav-item">
-        <a class="nav-link" href="/create">Create</a>
+      <a class="nav-link" href="{{route('create-form')}}">Create</a>
       </li>
       
     </ul>

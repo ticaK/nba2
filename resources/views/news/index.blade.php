@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
+@if(session('message'))
+   <em>{{session('message')}}</em>
+@endif
 <ul class="list-group">
     @foreach($news as $newws)
        <li class = "list-group-item" >
