@@ -9,8 +9,17 @@
 </head>
 <body>
     @include('partials.navbar')
-    <div class = "container">
-        @yield('content')
+    <div class="container">
+        <div class="row">
+                <div class="col-sm-8 blog-main" >
+                        @yield('content')
+                 </div>
+                 
+                  @include('partials.sidebar')
+            
+
+        </div>
     </div>
+
 </body>
 </html>
